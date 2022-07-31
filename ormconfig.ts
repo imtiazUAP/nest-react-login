@@ -5,9 +5,9 @@ dotenv.config();
 const config: MysqlConnectionOptions = {
     type: 'mysql',
     host: process.env.MYSQL_DB_HOST,
+    database: process.env.MYSQL_DB,
     username: process.env.MYSQL_USER,
     password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DB,
     entities: ['dist/src/**/*.entity.js'],
     migrations: ['dist/migrations/*.js'],
     cli: {

@@ -6,6 +6,8 @@ import { UsersModule } from './users/users.module';
 import config from 'ormconfig';
 import { User } from './entities/users.entity';
 
+console.log('---------------------------');
+console.log(config);
 @Module({
   imports: [
     TypeOrmModule.forRoot(config),

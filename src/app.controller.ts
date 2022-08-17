@@ -7,6 +7,7 @@ export class AppController {
 
   @Get()
   getHello(): string {
+    // testing commit from second laptop
     return this.appService.getHello();
   }
 }

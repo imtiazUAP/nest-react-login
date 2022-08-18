@@ -10,9 +10,6 @@ const config: MysqlConnectionOptions = {
     password: process.env.MYSQL_PASSWORD,
     entities: ['dist/src/**/*.entity.js'],
     migrations: ['dist/migrations/*.js'],
-    cli: {
-        migrationsDir: 'migrations',
-    },
     synchronize: false,
     logging: true,
 }

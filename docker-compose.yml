@@ -32,6 +32,8 @@ services:
       MYSQL_ROOT_PASSWORD: "${MYSQL_PASSWORD}"
     ports:
       - 3306:3306
+    networks:
+      - nestjs-network
     volumes:
       - my-db:/var/lib/mysql
 volumes:

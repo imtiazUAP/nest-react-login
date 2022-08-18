@@ -5,12 +5,15 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import config from 'ormconfig';
 import { User } from './entities/users.entity';
+import { MoviesModule } from './movies/movies.module';
+import { Movies } from './entities/movies.entity';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(config),
-    TypeOrmModule.forFeature([User]),
-    UsersModule
+    TypeOrmModule.forFeature([User, Movies]),
+    UsersModule,
+    MoviesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -7,6 +7,7 @@ import config from 'ormconfig';
 import { User } from './entities/users.entity';
 import { MoviesModule } from './movies/movies.module';
 import { Movies } from './entities/movies.entity';
+import { NextModule } from './next/next.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { Movies } from './entities/movies.entity';
     TypeOrmModule.forFeature([User, Movies]),
     UsersModule,
     MoviesModule,
+    NextModule,
   ],
   controllers: [AppController],
   providers: [AppService],

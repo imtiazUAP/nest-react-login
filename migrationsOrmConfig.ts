@@ -5,7 +5,7 @@ export = {
     username: process.env.MYSQL_USER,
     password: process.env.MYSQL_PASSWORD,
     port: process.env.MYSQL_DB_PORT,
-    entities: ['dist/src/entities/*.entity.js'],
+    entities: ['dist/src/server/entities/*.entity.js'],
     migrations: ['dist/migrations/*.js'],
     cli: {
         migrationsDir: 'migrations',

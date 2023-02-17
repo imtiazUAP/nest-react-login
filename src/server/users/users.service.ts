@@ -22,6 +22,10 @@ export class UsersService {
     return await this.userRepository.find();
   }
 
+  async getUserDetail(id: number): Promise<any> {
+    return await this.userRepository.findOne({id})
+  }
+
   async updateUserById(id: number, name: string): Promise<any> {
     const user = await this.userRepository.findOne(id);
     if (name) {

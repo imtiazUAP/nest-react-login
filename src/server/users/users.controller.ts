@@ -1,4 +1,12 @@
-import { Param, Body, Controller, Get, Post, Put, Delete } from '@nestjs/common';
+import {
+  Param,
+  Body,
+  Controller,
+  Get,
+  Post,
+  Put,
+  Delete,
+} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { SignUpBodyParams } from './dto/users.dto';
 
@@ -16,15 +24,19 @@ export class UsersController {
     return this.usersService.getUserList();
   }
 
+  @Get('/:user_id')
+  getUserDetail(
+    @Param('user_id') userId: number,
+  ): any {
+    return this.usersService.getUserDetail(userId);
+  }
+
   @Put('/:user_id')
   updateUser(
     @Param('user_id') userId: number,
     @Body() updateUserBodyParams: any,
   ): any {
-    return this.usersService.updateUserById(
-      userId,
-      updateUserBodyParams.name
-    );
+    return this.usersService.updateUserById(userId, updateUserBodyParams.name);
   }
 
   @Delete('/:user_id')

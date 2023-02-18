@@ -1,22 +1,25 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Movies {
+export class Memories {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  name: string;
+  user_id: number;
 
   @Column()
-  language: string;
+  title: string;
+
+  @Column({ type: "text"})
+  description: string;
 
   @Column()
-  country: string;
+  created_at: string;
 
   @Column()
-  published: string;
+  updated_at: string;
 
   @Column()
-  imdb_rating: number;
+  updated_by: number;
 }

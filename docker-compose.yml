@@ -3,21 +3,18 @@ services:
   api:
     container_name: "nest_api_${NODE_ENV}"
     image: "nest_api_${NODE_ENV}"
+    working_dir: /app
     environment:
       - NODE_ENV:${NODE_ENV}
-    build:
-      context: ./
-      target: "${NODE_ENV}"
-      dockerfile: Dockerfile
     entrypoint: ["npm", "run", "start:${NODE_ENV}"]
     env_file:
       - .env
     ports:
-      - 3000:3000
+      - 3001:3001
     networks:
       - nestjs-network
     volumes:
-      - ./:/usr/src/app
+      - ./:/app
       - /usr/src/app/node_modules
     restart: unless-stopped
     depends_on:

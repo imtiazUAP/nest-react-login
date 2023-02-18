@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "es6",
+    "lib": [
+      "ES2020.String",
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "strict": false,
+    "incremental": true,
+    "allowSyntheticDefaultImports": true,
+  },
+  "include": [
+    "next-env.d.ts",
+    "types.d.ts",
+    "pages",
+    "components"
+  ],
+  "exclude": [
+    "node_modules",
+    "next.config.js"
+  ]
+}

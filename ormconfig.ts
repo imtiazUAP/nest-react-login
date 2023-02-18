@@ -8,13 +8,12 @@ const config: MysqlConnectionOptions = {
     database: process.env.MYSQL_DB,
     username: process.env.MYSQL_USER,
     password: process.env.MYSQL_PASSWORD,
-    entities: ['dist/src/**/*.entity.js'],
+    entities: ['dist/src/server/entities/*.entity.js'],
     migrations: ['dist/migrations/*.js'],
     cli: {
         migrationsDir: 'migrations',
     },
     synchronize: false,
-    logging: true,
 }
 
 export default config;

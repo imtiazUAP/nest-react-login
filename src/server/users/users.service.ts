@@ -23,7 +23,7 @@ export class UsersService {
   }
 
   async getUserDetail(id: number): Promise<any> {
-    return await this.userRepository.findOne({id})
+    return await this.userRepository.findOne({ id });
   }
 
   async updateUserById(id: number, name: string): Promise<any> {

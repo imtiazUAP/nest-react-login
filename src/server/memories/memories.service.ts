@@ -15,7 +15,16 @@ export class MemoriesService {
       .createQueryBuilder()
       .insert()
       .into(Memories)
-      .values([{ user_id: params.user_id, title: params.title, description: params.description, created_at: currentTime.toString(), updated_at: currentTime.toString(), updated_by: params.updated_by }])
+      .values([
+        {
+          user_id: params.user_id,
+          title: params.title,
+          description: params.description,
+          created_at: currentTime.toString(),
+          updated_at: currentTime.toString(),
+          updated_by: params.updated_by,
+        },
+      ])
       .execute();
   }
 
@@ -24,13 +33,13 @@ export class MemoriesService {
   }
 
   async getMemoryDetail(id: number): Promise<any> {
-    return await this.memoryRepository.findOne({id})
+    return await this.memoryRepository.findOne({ id });
   }
 
   async updateMemoryById(id: number, description: string): Promise<any> {
     const memory = await this.memoryRepository.findOne(id);
     if (description) {
-        memory.description = description;
+      memory.description = description;
     }
 
     return this.memoryRepository.save(memory);

@@ -25,9 +25,7 @@ export class UsersController {
   }
 
   @Get('/:user_id')
-  getUserDetail(
-    @Param('user_id') userId: number,
-  ): any {
+  getUserDetail(@Param('user_id') userId: number): any {
     return this.usersService.getUserDetail(userId);
   }
 

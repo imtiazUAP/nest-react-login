@@ -6,12 +6,14 @@ import Header from '../components/Header';
 import SideBar from '../components/Sidebar';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (<>
-      <Header/>
-      <SideBar/>
+  return (
+    <>
+      <Header />
+      <SideBar />
       <Component {...pageProps} />
       {/* <Footer/> */}
-    </>);
+    </>
+  );
 }
 
 export default MyApp;

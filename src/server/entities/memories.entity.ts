@@ -11,7 +11,7 @@ export class Memories {
   @Column()
   title: string;
 
-  @Column({ type: "text"})
+  @Column({ type: 'text' })
   description: string;
 
   @Column()

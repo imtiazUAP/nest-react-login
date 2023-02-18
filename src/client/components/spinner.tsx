@@ -1,11 +1,11 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 export default function Spinner({
   className,
   ...props
-}: React.ComponentPropsWithoutRef<"svg">) {
+}: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
-      className={clsx("animate-spin w-6 h-6 text-blue-800", className)}
+      className={clsx('animate-spin w-6 h-6 text-blue-800', className)}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"

@@ -4,8 +4,8 @@ import Link from 'next/link';
 const Header: NextPage = () => {
   return (
     <div className="layout-header">
-      <Link href="/">
-        <a>Memory Partner</a>
+      <Link key={1} href="/">
+        Memory Partner
       </Link>
     </div>
   );

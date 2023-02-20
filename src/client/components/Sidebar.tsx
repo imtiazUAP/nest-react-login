@@ -2,31 +2,6 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 export default function SideBar() {
-  //     const [users, setUsers] = useState([]);
-
-  //     useEffect(() => {
-  //       if (!users.length) {
-  //           try {
-  //               fetch('http://localhost:3000/users/list', {
-  //                   method: 'GET',
-  //                 }).then(async (response: any) => {
-  //                   const users = await response.json();
-  //                   setUsers(users);
-  //                 });
-  //           } catch (error) {
-  //               console.log(error);
-  //           }
-  //       }
-  //     }, [users]);
-
-  //   return <>
-  //             <div className="sidebar">
-  //                 {users.map((user) => (
-  //                     <Link key={user.id} href={`/user?id=${user.id}`}>{user.name}</Link>
-  //                 ))}
-  //             </div>
-  //         </>;
-
   const [memories, setMemories] = useState([]);
 
   useEffect(() => {
@@ -47,11 +22,15 @@ export default function SideBar() {
   return (
     <>
       <div className="sidebar">
-        {memories.map((memory) => (
-          <Link key={memory.id} href={`/memory?id=${memory.id}`}>
-            {memory.title}
-          </Link>
-        ))}
+        {memories.map((memory) => {
+          const desc = JSON.parse(memory.description);
+          const parsedDescription = JSON.parse(desc);
+          return (
+            <Link key={memory.id} href={`/memory?id=${memory.id}`}>
+              {parsedDescription.blocks[0].text.substring(0, 20)}
+            </Link>
+          );
+        })}
       </div>
     </>
   );

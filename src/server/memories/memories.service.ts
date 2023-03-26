@@ -19,7 +19,7 @@ export class MemoriesService {
         {
           user_id: params.user_id,
           title: params.title,
-          description: params.description,
+          description: JSON.stringify(params.description),
           created_at: currentTime.toString(),
           updated_at: currentTime.toString(),
           updated_by: params.updated_by,
@@ -33,6 +33,7 @@ export class MemoriesService {
   }
 
   async getMemoryDetail(id: number): Promise<any> {
+    console.log('----- getting memory detail -----');
     return await this.memoryRepository.findOne({ id });
   }
 

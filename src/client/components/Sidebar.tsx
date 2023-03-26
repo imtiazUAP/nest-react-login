@@ -22,9 +22,15 @@ export default function SideBar() {
   return (
     <>
       <div className="sidebar">
+      <Link key={999} href={`/new_memory`}>
+              Add new memory
+            </Link>
         {memories.map((memory) => {
-          const desc = JSON.parse(memory.description);
-          const parsedDescription = JSON.parse(desc);
+          let parsedDescription = JSON.parse(memory.description);
+          // console.log('--- parsedDescription', parsedDescription);
+          if(!parsedDescription.blocks) {
+            parsedDescription = JSON.parse(parsedDescription);
+          }
           return (
             <Link key={memory.id} href={`/memory?id=${memory.id}`}>
               {parsedDescription.blocks[0].text.substring(0, 20)}

@@ -26,7 +26,12 @@ const Memory: NextPage = (): JSX.Element => {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ user_id: 1, title: 'This is title', description: memoryDescription, updated_by: 1 }),
+      body: JSON.stringify({
+        user_id: 1,
+        title: 'This is title',
+        description: memoryDescription,
+        updated_by: 1,
+      }),
     });
   };
 
@@ -36,17 +41,17 @@ const Memory: NextPage = (): JSX.Element => {
 
   return (
     <div className="content">
-        <div>
-          <ThemeProvider theme={myTheme}>
-            <MUIRichTextEditor
-              label="Type something here..."
-              value={memoryDescription}
-              inlineToolbar={true}
-              onChange={(newValue) => handleChange(newValue)}
-              onSave={handleSave}
-            />
-          </ThemeProvider>
-        </div>
+      <div>
+        <ThemeProvider theme={myTheme}>
+          <MUIRichTextEditor
+            label="Type something here..."
+            value={memoryDescription}
+            inlineToolbar={true}
+            onChange={(newValue) => handleChange(newValue)}
+            onSave={handleSave}
+          />
+        </ThemeProvider>
+      </div>
     </div>
   );
 };

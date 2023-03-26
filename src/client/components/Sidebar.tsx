@@ -22,13 +22,13 @@ export default function SideBar() {
   return (
     <>
       <div className="sidebar">
-      <Link key={999} href={`/new_memory`}>
-              Add new memory
-            </Link>
+        <Link key={999} href={`/new_memory`}>
+          Add new memory
+        </Link>
         {memories.map((memory) => {
           let parsedDescription = JSON.parse(memory.description);
           // console.log('--- parsedDescription', parsedDescription);
-          if(!parsedDescription.blocks) {
+          if (!parsedDescription.blocks) {
             parsedDescription = JSON.parse(parsedDescription);
           }
           return (

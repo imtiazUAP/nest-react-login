@@ -20,17 +20,16 @@ FROM base as builder
 WORKDIR /app
 ENV NEXT_TELEMETRY_DEBUG=1
 ARG NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-COPY .npmrc ./
 COPY package*.json ./
 COPY tsconfig*.json ./
 RUN npm install
+RUN npm install -D @swc/cli @swc/core
 COPY ./src ./src
 COPY ./migrations ./migrations
 RUN npm run build
 
 FROM base as prod
 WORKDIR /app
-COPY .npmrc ./
 COPY package*.json ./
 COPY ./migrations ./migrations
 COPY --from=builder /app/node_modules ./node_modules

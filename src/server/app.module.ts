@@ -4,7 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { MemoriesModule } from './memories/memories.module';
-import config from 'ormconfig';
+import config from '../config/ormconfig';
 import { User } from './entities/users.entity';
 import { Memories } from './entities/memories.entity';
 import { MoviesModule } from './movies/movies.module';
